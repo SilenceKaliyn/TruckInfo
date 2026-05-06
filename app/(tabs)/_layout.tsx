@@ -1,35 +1,51 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
 import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
+        tabBarStyle: {
+          backgroundColor: '#2a2a2b',
+          borderTopColor: '#454546',
+          borderTopWidth: 1,
+        },
+        tabBarActiveTintColor: '#ff9800',
+        tabBarInactiveTintColor: '#8c8c8c',
+        tabBarLabelStyle: {
+          fontSize: 11,
+          fontWeight: '600',
+        },
       }}>
+      <Tabs.Screen
+        name="Info"
+        options={{
+          title: 'Información',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="info.circle.fill" color={color} />,
+        }}
+      />
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          href: null,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="envios"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Envíos',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="envelope.fill" color={color} />,
         }}
       />
+      <Tabs.Screen
+        name="ajustes"
+        options={{
+          title: 'Ajustes',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="gearshape.fill" color={color} />,
+        }}
+      />    
     </Tabs>
   );
 }
