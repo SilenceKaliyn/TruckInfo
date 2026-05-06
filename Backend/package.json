@@ -1,0 +1,31 @@
+{
+  "name": "truckinfo-backend",
+  "version": "1.0.0",
+  "description": "API REST para TruckInfoStatus - seguimiento de envíos",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "truck",
+    "tracking",
+    "api",
+    "rest"
+  ],
+  "author": "Oscar Berumen",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "9.0.3",
+    "mssql": "^11.0.1"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "nodemon": "^3.1.9"
+  }
+}
